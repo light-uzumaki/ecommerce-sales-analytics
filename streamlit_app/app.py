@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-from sqlalchemy import create_engine
+
 
 # -----------------------------
 # PAGE CONFIG
@@ -17,26 +17,12 @@ st.set_page_config(
 # -----------------------------
 
 from urllib.parse import quote_plus
-from sqlalchemy import create_engine
 
-username = "postgres"
 
-password = quote_plus("ajit@123at")
-
-host = "localhost"
-port = "5432"
-database = "ecommerce"
-
-engine = create_engine(
-    f"postgresql+psycopg2://{username}:{password}@{host}:{port}/{database}"
-)
 # -----------------------------
 # LOAD DATA
 # -----------------------------
-
-query = "SELECT * FROM final_dataset"
-
-df = pd.read_sql(query, engine)
+df = pd.read_csv("data/processed/final_dataset.csv")
 
 # -----------------------------
 # SIDEBAR

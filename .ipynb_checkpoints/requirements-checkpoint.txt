@@ -5,3 +5,5 @@ seaborn
 jupyter
 sqlalchemy
 openpyxl
+streamlit
+plotly
